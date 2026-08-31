@@ -80,7 +80,6 @@ client.on('messageCreate', async message => {
 
         await message.channel.send({
             content: '# NEW POST || @everyone ||\n\n' + url,
-
             allowedMentions: {
                 parse: ['everyone']
             }
@@ -105,12 +104,7 @@ client.on('messageCreate', async message => {
         }
 
         await message.channel.send({
-            content:
-                '# EOS IS LIVE || @everyone ||\n\n' +
-                'Join the stream:\n' +
-                url +
-                '\n\nSee you there!',
-
+            content: '# EOS IS LIVE || @everyone ||\n\nJoin the stream:\n' + url + '\n\nSee you there!',
             allowedMentions: {
                 parse: ['everyone']
             }
@@ -131,58 +125,56 @@ client.on('messageCreate', async message => {
             await message.delete().catch(() => {});
         }
 
+        const rebrandingMessage = [
+            '@everyone',
+            '',
+            '[ EOS SYSTEM // REBRANDING PROTOCOL ]',
+            '',
+            'INITIALIZING...',
+            '',
+            'Scanning organizational identity...',
+            '',
+            'Previous identity: ARGEA',
+            'Status: DECOMMISSIONED',
+            '',
+            'New identity detected: EOS',
+            'Status: ACTIVATED',
+            '',
+            'REBRANDING PROTOCOL COMPLETE.',
+            '',
+            'A new era has begun.',
+            '',
+            'From this moment forward, our organization will operate under a new identity:',
+            '',
+            'EOS',
+            '',
+            'A new name.',
+            'A new image.',
+            'A new chapter.',
+            '',
+            'Our objective remains unchanged:',
+            '',
+            'COMPETE. EVOLVE. TRANSCEND.',
+            '',
+            '[ IDENTITY UPDATE ]',
+            'ARGEA -> EOS',
+            '',
+            '[ SYSTEM STATUS ]',
+            'ONLINE',
+            '',
+            '[ EOS PROTOCOL ]',
+            'ACTIVATED',
+            '',
+            'EOS // A NEW ERA BEGINS.'
+        ].join('\n');
+
         try {
 
             await message.channel.send({
-
-                content: `@everyone
-
-[ EOS SYSTEM // REBRANDING PROTOCOL ]
-
-INITIALIZING...
-
-Scanning organizational identity...
-
-Previous identity: ARGEA
-Status: DECOMMISSIONED
-
-New identity detected: EOS
-Status: ACTIVATED
-
-REBRANDING PROTOCOL COMPLETE.
-
-A new era has begun.
-
-From this moment forward, our organization will operate under a new identity:
-
-EOS
-
-A new name.
-A new image.
-A new chapter.
-
-Our objective remains unchanged:
-
-COMPETE. EVOLVE. TRANSCEND.
-
-[ IDENTITY UPDATE ]
-
-ARGEA -> EOS
-
-[ SYSTEM STATUS ]
-
-ONLINE
-
-[ EOS PROTOCOL ]
-
-ACTIVATED
-
-EOS // A NEW ERA BEGINS.`,
-
+                content: rebrandingMessage,
                 allowedMentions: {
                     parse: ['everyone']
                 }
-
             });
 
             console.log('Rebranding message sent');
