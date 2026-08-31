@@ -105,7 +105,6 @@ client.on('messageCreate', async message => {
 
     // !mensaje
 
-    ```text
 if (command === '!mensaje') {
 
     console.log('Comando !mensaje ejecutado');
@@ -127,12 +126,12 @@ if (command === '!mensaje') {
         '🔴 **IDENTIDAD ANTERIOR:**',
         '**ARGEA**',
         '',
-        '⚠️ Estado: `DESACTIVADA`',
+        '⚠️ Estado: **DESACTIVADA**',
         '',
         '🟢 **NUEVA IDENTIDAD DETECTADA:**',
         '**EOS**',
         '',
-        '⚡ Estado: `ACTIVADA`',
+        '⚡ Estado: **ACTIVADA**',
         '',
         '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
         '',
@@ -158,9 +157,9 @@ if (command === '!mensaje') {
         '',
         '📡 **[ ACTUALIZACIÓN DEL SISTEMA ]**',
         '',
-        '`IDENTIDAD:` **EOS**',
-        '`ESTADO:` 🟢 **ONLINE**',
-        '`PROTOCOLO:` 🟢 **ACTIVADO**',
+        '**IDENTIDAD:** EOS',
+        '**ESTADO:** 🟢 ONLINE',
+        '**PROTOCOLO:** 🟢 ACTIVADO',
         '',
         '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
         '',
@@ -190,7 +189,6 @@ if (command === '!mensaje') {
 
     return;
 }
-```
 
 
 });
