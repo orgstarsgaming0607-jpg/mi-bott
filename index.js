@@ -189,4 +189,3 @@ client.login(process.env.TOKEN)
     .catch(error => {
         console.error('Login error:', error);
     });
-```
