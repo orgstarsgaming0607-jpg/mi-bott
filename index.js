@@ -96,18 +96,21 @@ client.on('messageCreate', async message => {
     }
 
     // =====================
-    // !mensaje
-    // =====================
-    if (message.content === '!mensaje') {
+// !mensaje
+// =====================
+if (message.content.trim().toLowerCase() === '!mensaje') {
 
-        if (message.deletable) {
-            await message.delete().catch(() => {});
-        }
+    console.log('📢 Comando !mensaje ejecutado');
 
-        return message.channel.send({
+    if (message.deletable) {
+        await message.delete().catch(() => {});
+    }
+
+    try {
+        await message.channel.send({
             content: `@everyone
 
-🤖 **[EOS // SYSTEM REBRANDING PROTOCOL]**
+🤖 **[ EOS SYSTEM // REBRANDING PROTOCOL ]**
 
 > **INITIALIZING...**
 >
@@ -132,20 +135,32 @@ client.on('messageCreate', async message => {
 > A new chapter.
 >
 > But our objective remains unchanged:
+>
 > **COMPETE. EVOLVE. TRANSCEND.**
 >
-> **[IDENTITY UPDATE]**
+> **[ IDENTITY UPDATE ]**
 > ARGEA → EOS
 >
-> **[SYSTEM STATUS]**
+> **[ SYSTEM STATUS ]**
 > 🟢 ONLINE
 >
-> **[EOS PROTOCOL]**
+> **[ EOS PROTOCOL ]**
 > 🟢 ACTIVATED
 >
 > 🌅 **EOS // A NEW ERA BEGINS.**`,
             allowedMentions: {
                 parse: ['everyone']
+            }
+        });
+
+        console.log('✅ Mensaje de rebranding enviado');
+
+    } catch (error) {
+        console.error('❌ Error enviando !mensaje:', error);
+    }
+
+    return;
+}
             }
         });
     }
