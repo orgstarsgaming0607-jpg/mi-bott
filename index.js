@@ -105,76 +105,93 @@ client.on('messageCreate', async message => {
 
     // !mensaje
 
-    if (command === '!mensaje') {
+    ```text
+if (command === '!mensaje') {
 
-        console.log('Rebranding command received');
+    console.log('Comando !mensaje ejecutado');
 
-        if (message.deletable) {
-            await message.delete().catch(() => {});
-        }
-
-        const rebrandingMessage = [
-            '@everyone',
-            '',
-            '[ EOS SYSTEM // REBRANDING PROTOCOL ]',
-            '',
-            'INITIALIZING...',
-            '',
-            'Scanning organizational identity...',
-            '',
-            'Previous identity: ARGEA',
-            'Status: DECOMMISSIONED',
-            '',
-            'New identity detected: EOS',
-            'Status: ACTIVATED',
-            '',
-            'REBRANDING PROTOCOL COMPLETE.',
-            '',
-            'A new era has begun.',
-            '',
-            'From this moment forward, our organization will operate under a new identity:',
-            '',
-            'EOS',
-            '',
-            'A new name.',
-            'A new image.',
-            'A new chapter.',
-            '',
-            'Our objective remains unchanged:',
-            '',
-            'COMPETE. EVOLVE. TRANSCEND.',
-            '',
-            '[ IDENTITY UPDATE ]',
-            'ARGEA -> EOS',
-            '',
-            '[ SYSTEM STATUS ]',
-            'ONLINE',
-            '',
-            '[ EOS PROTOCOL ]',
-            'ACTIVATED',
-            '',
-            'EOS // A NEW ERA BEGINS.'
-        ].join('\n');
-
-        try {
-
-            await message.channel.send({
-                content: rebrandingMessage,
-                allowedMentions: {
-                    parse: ['everyone']
-                }
-            });
-
-            console.log('Rebranding message sent');
-
-        } catch (error) {
-
-            console.error('Error sending rebranding message:', error);
-
-        }
-
-        return;
+    if (message.deletable) {
+        await message.delete().catch(() => {});
     }
+
+    const rebrandingMessage = [
+        '@everyone',
+        '',
+        '╔══════════════════════════════════════╗',
+        '          🤖 **EOS // SYSTEM UPDATE**',
+        '╚══════════════════════════════════════╝',
+        '',
+        '> **INICIANDO PROTOCOLO DE REBRANDING...**',
+        '> Analizando identidad de la organización...',
+        '',
+        '🔴 **IDENTIDAD ANTERIOR:**',
+        '**ARGEA**',
+        '',
+        '⚠️ Estado: `DESACTIVADA`',
+        '',
+        '🟢 **NUEVA IDENTIDAD DETECTADA:**',
+        '**EOS**',
+        '',
+        '⚡ Estado: `ACTIVADA`',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+        '',
+        '🤖 **PROTOCOLO DE REBRANDING COMPLETADO**',
+        '',
+        'Después de una etapa de evolución, nuestra organización adopta oficialmente una nueva identidad.',
+        '',
+        'A partir de este momento:',
+        '',
+        '**ARGEA → EOS**',
+        '',
+        '🌅 **BIENVENIDOS A UNA NUEVA ERA.**',
+        '',
+        'Un nuevo nombre.',
+        'Una nueva imagen.',
+        'Una nueva identidad.',
+        '',
+        'Pero nuestro objetivo sigue siendo el mismo:',
+        '',
+        '**COMPETIR. EVOLUCIONAR. SUPERAR LOS LÍMITES.**',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+        '',
+        '📡 **[ ACTUALIZACIÓN DEL SISTEMA ]**',
+        '',
+        '`IDENTIDAD:` **EOS**',
+        '`ESTADO:` 🟢 **ONLINE**',
+        '`PROTOCOLO:` 🟢 **ACTIVADO**',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+        '',
+        '🌅 **EOS // UNA NUEVA ERA COMIENZA.**',
+        '',
+        '╔══════════════════════════════════════╗',
+        '             **EOS IS HERE.**',
+        '╚══════════════════════════════════════╝'
+    ].join('\n');
+
+    try {
+
+        await message.channel.send({
+            content: rebrandingMessage,
+            allowedMentions: {
+                parse: ['everyone']
+            }
+        });
+
+        console.log('Mensaje de rebranding enviado');
+
+    } catch (error) {
+
+        console.error('Error enviando mensaje de rebranding:', error);
+
+    }
+
+    return;
+}
+```
+
 
 });
 
