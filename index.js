@@ -1,3 +1,4 @@
+```js
 require('dotenv').config();
 
 const { Client, GatewayIntentBits } = require('discord.js');
@@ -11,22 +12,17 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent
     ],
-
     allowedMentions: {
         parse: ['everyone']
     }
 });
-
-// =============================
-// BOT READY
-// =============================
 
 client.once('clientReady', () => {
     console.log('EOS bot connected');
 });
 
 // =============================
-// WELCOME MESSAGE
+// WELCOME
 // =============================
 
 client.on('guildMemberAdd', member => {
@@ -62,9 +58,7 @@ client.on('messageCreate', async message => {
 
     const command = message.content.trim().toLowerCase();
 
-    // =============================
     // !post
-    // =============================
 
     if (command.startsWith('!post ')) {
 
@@ -87,9 +81,7 @@ client.on('messageCreate', async message => {
         return;
     }
 
-    // =============================
     // !twitch
-    // =============================
 
     if (command.startsWith('!twitch ')) {
 
@@ -112,9 +104,7 @@ client.on('messageCreate', async message => {
         return;
     }
 
-    // =============================
     // !mensaje
-    // =============================
 
     if (command === '!mensaje') {
 
