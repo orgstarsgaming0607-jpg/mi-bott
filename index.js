@@ -1,5 +1,6 @@
+```js
 require('dotenv').config();
-const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 
 console.log("Arrancando bot...");
 console.log("🔥 ESTE ES EL ARCHIVO CORRECTO");
@@ -52,24 +53,101 @@ client.on('guildMemberAdd', member => {
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
 
+    // =====================
     // !post
+    // =====================
     if (message.content.startsWith('!post')) {
         const args = message.content.split(' ');
         const url = args[1];
+
         if (!url) return;
 
-        if (message.deletable) await message.delete().catch(() => {});
-        return message.channel.send(`# 🚨 NUEVO POST || @everyone ||\n\n🔥 ${url}`);
+        if (message.deletable) {
+            await message.delete().catch(() => {});
+        }
+
+        return message.channel.send({
+            content: `# 🚨 NUEVO POST || @everyone ||\n\n🔥 ${url}`,
+            allowedMentions: {
+                parse: ['everyone']
+            }
+        });
     }
 
-    // !twitchsp
+    // =====================
+    // !twitch
+    // =====================
     if (message.content.startsWith('!twitch ')) {
         const args = message.content.split(' ');
         const url = args[1];
+
         if (!url) return;
 
-        if (message.deletable) await message.delete().catch(() => {});
-        return message.channel.send(`# 🔴 ¡EOS está en directo! || @everyone ||\n\n🎮 Pásate por el stream:\n👉 ${url}\n\n💜 ¡No te lo pierdas!`);
+        if (message.deletable) {
+            await message.delete().catch(() => {});
+        }
+
+        return message.channel.send({
+            content: `# 🔴 ¡EOS está en directo! || @everyone ||\n\n🎮 Pásate por el stream:\n👉 ${url}\n\n💜 ¡No te lo pierdas!`,
+            allowedMentions: {
+                parse: ['everyone']
+            }
+        });
+    }
+
+    // =====================
+    // !mensaje
+    // =====================
+    if (message.content === '!mensaje') {
+
+        if (message.deletable) {
+            await message.delete().catch(() => {});
+        }
+
+        return message.channel.send({
+            content: `@everyone
+
+🤖 **[EOS // SYSTEM REBRANDING PROTOCOL]**
+
+> **INITIALIZING...**
+>
+> Scanning organizational identity...
+>
+> Previous identity: **ARGEA**
+> Status: **DECOMMISSIONED**
+>
+> New identity detected: **EOS**
+> Status: **ACTIVATED**
+>
+> ⚡ **REBRANDING PROTOCOL COMPLETE**
+>
+> A new era has begun.
+>
+> From this moment forward, our organization will operate under a new identity:
+>
+> 🌅 **EOS**
+>
+> A new name.
+> A new image.
+> A new chapter.
+>
+> But our objective remains unchanged:
+> **COMPETE. EVOLVE. TRANSCEND.**
+>
+> **[IDENTITY UPDATE]**
+> ARGEA → EOS
+>
+> **[SYSTEM STATUS]**
+> 🟢 ONLINE
+>
+> **[EOS PROTOCOL]**
+> 🟢 ACTIVATED
+>
+> 🌅 **EOS // A NEW ERA BEGINS.**`,
+            allowedMentions: {
+                parse: ['everyone']
+            }
+        });
     }
 });
 
@@ -77,4 +155,5 @@ client.on('messageCreate', async message => {
 // LOGIN
 // =====================
 client.login(process.env.TOKEN);
-console.log("TOKEN:", process.env.TOKEN);
+```
+
