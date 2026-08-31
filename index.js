@@ -37,9 +37,9 @@ client.on('guildMemberAdd', member => {
     const embed = {
         color: 0x2ecc71,
         title: "🎉 New member",
-        description: `👋 Bienvenido al servidor de argea <@${member.user.id}> 💚`,
+        description: `👋 Bienvenido al servidor de EOS <@${member.user.id}> ☀️🌙`,
         image: {
-            url: "https://media.discordapp.net/attachments/1465118735999434886/1499077960869871767/Bienvenida.jpeg"
+            url: "https://cdn.discordapp.com/attachments/1465118735999434886/1544108968647860335/content.png?ex=6a974f0a&is=6a95fd8a&hm=41b53236347e11f4e3fc2804dcb9b3b700d1ce49a2f923fdcd4316d612ed5b18"
         }
     };
 
@@ -69,7 +69,7 @@ client.on('messageCreate', async message => {
         if (!url) return;
 
         if (message.deletable) await message.delete().catch(() => {});
-        return message.channel.send(`# 🔴 ¡Argea está en directo! || @everyone ||\n\n🎮 Pásate por el stream:\n👉 ${url}\n\n💜 ¡No te lo pierdas!`);
+        return message.channel.send(`# 🔴 ¡EOS está en directo! || @everyone ||\n\n🎮 Pásate por el stream:\n👉 ${url}\n\n💜 ¡No te lo pierdas!`);
     }
 });
 
