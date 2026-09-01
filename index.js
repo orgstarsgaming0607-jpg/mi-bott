@@ -57,6 +57,56 @@ client.on('messageCreate', async message => {
 
     const command = message.content.trim().toLowerCase();
 
+    // !normasserver
+if (command === '!normasserver') {
+    return message.channel.send(
+`# 📜 Normas del Servidor de EOS
+
+***💎 Bienvenid@ a EOS 💎***
+> Antes de participar en el servidor, lee atentamente las siguientes normas:
+
+**✅ Normas Generales**
+
+> **🤝 Respeto ante todo**
+> No se permiten insultos, faltas de respeto, acoso ni discriminación de ningún tipo.
+>
+> **💬 Lenguaje adecuado**
+> Queda prohibido el spam, contenido NSFW, político o religioso.
+>
+> **🖼️ Nicks y fotos de perfil**
+> Usa nombres e imágenes apropiadas. No se acepta contenido ofensivo o explícito.
+>
+> **🛡️ Respeto al staff**
+> Las decisiones del equipo de moderación y administración son finales.
+
+**🔊 Normas de Chats y Canales de Voz**
+
+> **🎧 No interrumpir**
+> Respeta los turnos de palabra en charlas de equipo, entrenamientos y torneos.
+>
+> **🔇 Evita gritar o spamear**
+> Mantén un tono adecuado en los canales de voz.
+>
+> **📺 Streaming**
+> Si vas a transmitir partidas o entrenamientos, avisa previamente para evitar interferencias.
+
+***⚠️ Sanciones***
+
+El incumplimiento de estas normas puede conllevar:
+
+> ⚠️ Advertencia
+> 🔇 Mute temporal
+> 🚫 Expulsión
+> ⛔ Ban permanente
+
+> 📢 Al permanecer en este servidor, aceptas todas estas normas.
+
+# ***🌙 Disfruta, compite y crece con respeto en EOS ☀️***
+
+||@everyone||`
+    );
+}
+
     // !Normativa
 if (message.content.toLowerCase() === '!normativa') {
     return message.channel.send(
